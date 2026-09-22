@@ -1,0 +1,4 @@
+﻿-- Final system upgrade
+-- No additional SQL changes are confirmed locally.
+-- Existing security/RLS/RPC objects are intentionally untouched.
+-- Tracking SQL remains in add_order_tracking.sql and must not be duplicated here.
