@@ -19,3 +19,7 @@ html{direction:ltr;overflow-x:hidden}body{direction:ltr;font-family:Inter,Arial,
 .field-hint{display:block;color:var(--muted);font-size:10px;margin-top:8px}
 
 .order-admin-card{border-top:1px solid #eee}.order-items-admin{padding:12px 8px 15px;display:grid;gap:8px;background:#faf9f6}.order-item-admin{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:10px;font-size:11px}.order-item-admin span{color:var(--muted)}@media(max-width:600px){.order-item-admin{grid-template-columns:1fr 1fr}.order-admin-card .tr{min-width:620px}}
+.image-frame img{object-position:center center}
+.topbar .brand img{content:url('/assets/header-logo.jpeg');object-fit:contain;object-position:center center}
+.brand-name{display:block;font-size:.72em;letter-spacing:1.3px;white-space:nowrap}
+@media(max-width:600px){.topbar .brand-name{font-size:.62em;letter-spacing:.8px}.topbar .brand{gap:8px}.topbar .brand img{width:40px;height:34px}}
