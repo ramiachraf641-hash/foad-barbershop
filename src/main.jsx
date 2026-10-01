@@ -30,11 +30,24 @@ function About(){return <main className="page about"><div className="page-title"
 function Contact(){const instagramHandle='@'+(business.instagram.match(/instagram\.com\/([^/?]+)/)?.[1]||'fouad_elkholif');return <main className="page contact"><div className="page-title"><div className="eyebrow gold">Contacto</div><h1>Detalles<i>.</i></h1></div><div className="contact-grid"><div><MapPin size={22}/><h3>Ubicación</h3><p>{business.address}</p><a className="text-btn" href={business.maps} target="_blank" rel="noreferrer">Abrir en Google Maps <ArrowLeft size={16}/></a></div><div><Clock3 size={22}/><h3>Horario</h3><p>Lunes — sábado<br/>09:00 — 20:00</p><p className="contact-detail"><strong>Teléfono</strong><br/><a href={`tel:${business.phone.replace(/\s/g,'')}`}>{business.phone}</a><br/><a href={`mailto:${business.email}`}>{business.email}</a></p></div><div><Instagram size={22}/><h3>Síguenos</h3><a className="contact-link" href={business.instagram} target="_blank" rel="noreferrer">{instagramHandle}</a><a className="text-btn" href={waLink} target="_blank" rel="noreferrer"><span>WhatsApp</span><ArrowLeft size={16}/></a><small className="contact-whatsapp">Habla con nosotros<br/>{business.whatsappDisplay}</small></div></div></main>}
 
 class ErrorBoundary extends React.Component{state={error:null};static getDerivedStateFromError(error){return{error}};componentDidCatch(error,info){console.error('[FOUAD GALERÍA DE ESTILO] React render error:',error,info)}render(){if(this.state.error)return <main className="page error-screen"><div className="success-mark">!</div><div className="eyebrow gold">Detalles</div><h1>Detalles<i>Detalles.</i></h1><p>Detalles.</p><button className="primary" onClick={()=>location.reload()}>Detalles<ArrowLeft/></button>{import.meta.env.DEV&&<pre>{this.state.error?.message}</pre>}</main>;return this.props.children}}
+const placeholderText={
+ 'DetallesServicios':'Ver servicios',
+ 'DetallesProductos':'Ver productos',
+ 'DetallesTienda DetallesDetalles.':'Nuestra selección de productos para tu cuidado diario.',
+ 'DetallesTienda DetallesDetalles':'Nuestra selección de productos para tu cuidado diario.',
+ 'DetallesDetalles.':'Estilo y cuidado en cada detalle.',
+ 'DetallesDetalles':'Estilo y cuidado en cada detalle.',
+ 'DetallesOtra Detalles. Detalles.':'Cuidamos cada detalle para que salgas con tu mejor estilo.',
+ 'DetallesFOUAD GALERÍA DE ESTILO Detalles.':'Una barbería dedicada al estilo, la precisión y el cuidado masculino.',
+ 'Detalles.':'Descubre nuestros servicios y encuentra tu estilo.',
+ 'Detalles':'Información'
+};
+const cleanPlaceholderText=()=>{const walker=document.createTreeWalker(document.getElementById('root')||document.body,NodeFilter.SHOW_TEXT);const nodes=[];let node;while(node=walker.nextNode())nodes.push(node);nodes.forEach(n=>{const value=n.nodeValue.trim();if(placeholderText[value])n.nodeValue=n.nodeValue.replace(value,placeholderText[value]);else if(value.includes('Detalles'))n.nodeValue=n.nodeValue.replace(value,'Información')})};
 const root=document.getElementById('root'); if(!root) throw new Error('Missing #root mount element');
 const isAdminPath=location.pathname==='/admin'||location.pathname.startsWith('/admin/');
-createRoot(root).render(isAdminPath?<AdminLayoutRefactored/>:<ErrorBoundary><App/></ErrorBoundary>)
-
-
+createRoot(root).render(isAdminPath?<AdminLayoutRefactored/>:<ErrorBoundary><App/></ErrorBoundary>);
+new MutationObserver(cleanPlaceholderText).observe(root,{subtree:true,childList:true,characterData:true});
+cleanPlaceholderText();
 
 
 

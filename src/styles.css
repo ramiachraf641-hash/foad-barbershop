@@ -26,3 +26,7 @@ html{direction:ltr;overflow-x:hidden}body{direction:ltr;font-family:Inter,Arial,
 .hero-image .image-frame{border:1px solid rgba(200,163,106,.7);box-shadow:0 18px 45px rgba(0,0,0,.28);}
 .hero-image .image-frame img{display:block;object-position:center center;}
 .hero-image .image-frame img{width:100%;height:100%;object-fit:cover;object-position:50% 50%;background:#171716;}
+.topbar .brand span,.footer-brand span,.admin-login .brand span,.admin-side .brand span{font-size:0}.topbar .brand span b,.footer-brand span b,.admin-login .brand span b,.admin-side .brand span b{font-size:15px}.topbar .brand span:after,.footer-brand span:after,.admin-login .brand span:after,.admin-side .brand span:after{content:' GALERÍA DE ESTILO';font-size:15px;letter-spacing:2px}
+.hero-image .image-frame{width:min(72%,390px);height:auto;aspect-ratio:9/16;max-height:86%;}
+.hero-image .image-frame img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;}
+@media(max-width:800px){.hero-image .image-frame{width:min(78%,340px);height:auto;aspect-ratio:9/16;max-height:none;}}
