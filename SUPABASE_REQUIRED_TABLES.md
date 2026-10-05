@@ -32,15 +32,15 @@
 القيم الجديدة المطلوبة:
 
 - `business_name`: `FOUAD EL PELUQUERO DEL MUNDO`
-- `address`: `R939+54M Las Cabañuelas, España`
-- `city`: `Las Cabañuelas`
+- `address`: `41°32'24.5"N 2°25'28.9"E`
+- `city`: `41.5401389, 2.4246944`
 - `country`: `España`
 - `phone`: `+34745086413`
 - `email`: `Fouadelkholief1@gmail.com`
 - `instagram_url`: `https://www.instagram.com/fouad_elkholif?stkn=Y29zaWl2Mmd5M3Fy&utm_source=qr`
 - `facebook_url`: `NULL`
 - `whatsapp_number`: `+34745086413`
-- `google_maps_url`: `https://www.google.com/maps?q=36.802951,-2.632191`
+- `google_maps_url`: `https://www.google.com/maps?q=41.5401389,2.4246944`
 - `language_code`: `es`
 - `currency_code`: `EUR`
 - `currency_symbol`: `€`
